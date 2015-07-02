@@ -1,0 +1,13 @@
+<h1>Used Cell Phones</h1>
+
+<ul>
+  <% @phones.each do |phone| %>
+    <li>Manufacturer: <%= PhoneManufacturer.find(phone.phone_manufacturer_id).name %></li>
+    <li>Year: <%= phone.year %></li>
+    <li>Battery Life: <%= phone.battery_life %></li>
+    <li>Description: <%= phone.description %></li>
+    <br>
+  <% end %>
+</ul>
+
+<%= link_to "Add A Newly Acquired Used Cell Phone", new_phone_path %>
